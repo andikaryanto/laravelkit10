@@ -8,7 +8,7 @@ import { Button } from '@/Components/Button/Button';
 import { Column } from '@/Components/Grid/Column';
 
 export default function Dashboard({ auth }) {
-    return <AdminLayout>
+    return <AdminLayout textName={'Dashboard'}>
         {/* <div className='container flex flex-row mb-5'>
             <RoundedCard>
                 <div className='font-bold text-[18px]'>

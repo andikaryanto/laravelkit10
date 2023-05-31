@@ -3,19 +3,19 @@ import { FaSearch, FaBell, FaInfoCircle } from 'react-icons/fa';
 
 import imgavatr from '../../../assets/img/avatars/avatar.jpg';
 import SmallCircleAvatar from '../Avatar/SmallCircleAvatar';
-export const NavBar = () => {
+export const NavBar = ({textName, ...props}) => {
     return (
         <div className="flex items-center justify-between px-6 py-4">
             {/* Your navigation bar content */}
 
             <div >
-                <div>path / to</div>
-                <div className="font-bold capitalize text-[33px]">Dashboard</div>
+                <div className='text-[14px]'>Pages / {textName}</div>
+                <div className="font-bold capitalize text-[33px]">{textName}</div>
             </div>
             <div className="flex justify-between bg-white items-center h-auto shadow-xl shadow-shadow p-2 rounded-full">
                 <div className="flex h-full items-center rounded-full bg-light-green text-navy-700 dark:bg-navy-900 dark:text-white xl:w-[225px] mr-2">
                     <p className="pl-3 pr-2 text-xl">
-                        <FaSearch className='text-gray-400'/>
+                        <FaSearch className='text-gray'/>
                     </p>
                     <input
                         type="text"
