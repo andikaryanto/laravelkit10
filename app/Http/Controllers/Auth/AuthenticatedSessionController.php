@@ -8,12 +8,29 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
+use LaravelCommon\App\Models\User;
+use LaravelCommon\App\Models\User\Token;
+use LaravelCommon\App\Services\UserService;
 
 class AuthenticatedSessionController extends Controller
 {
+    protected UserService $userService;
+
+    /**
+     *
+     * @param UserService $userService
+     */
+    public function __construct(
+        UserService $userService
+    )
+    {
+        $this->userService = $userService;
+    }
+
     /**
      * Display the login view.
      */
@@ -34,7 +51,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $token = $this->userService->getToken($request->user())->getToken();
+        $cookie = Cookie::make('access_token', $token, 60, null, null, null, false);
+
+        return redirect()->intended(RouteServiceProvider::HOME)->cookie($cookie);
     }
 
     /**

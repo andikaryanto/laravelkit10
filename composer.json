@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.1",
         "andikaryanto11/laravelcommon": "dev-redesign-model",
+        "firebase/php-jwt": "^6.5",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.6.3",
         "laravel/framework": "^10.10",
@@ -53,7 +54,13 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [],
+            "providers": [
+                "LaravelCommon\\App\\Providers\\CommonAppServiceProvider"
+            ],
+            "aliases": {
+                "LaraveCommon": "LaravelCommon\\System\\Support\\Facades\\Common"
+            }
         }
     },
     "config": {

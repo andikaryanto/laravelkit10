@@ -2,7 +2,7 @@ import { TableHeader } from "./TableHeader";
 
 export const Table = ({columns, body, children, ...props}) => {
     const headers = columns.map((e, i) => {
-        return <TableHeader>{e}</TableHeader>
+        return <TableHeader key={i}>{e}</TableHeader>
     });
 
     return <div className="container bg-white rounded-t-xl shadow-shadow shadow-xl">

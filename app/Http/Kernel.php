@@ -2,7 +2,8 @@
 
 namespace App\Http;
 
-use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use LaravelCommon\App\Http\Kernel as HttpKernel;
+use LaravelCommon\System\Http\Request;
 
 class Kernel extends HttpKernel
 {
@@ -66,4 +67,15 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
+
+    /**
+     * Handle an incoming HTTP request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function handle($request)
+    {
+        return parent::handleRequest(Request::class, $request);
+    }
 }
