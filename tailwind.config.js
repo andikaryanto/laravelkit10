@@ -16,10 +16,12 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
+                "shadow": '#e2e8f0',
+                "gray": '#9ca3af',
                 'light-blue': '#ECF7FF', // Adjusted light-blue color
                 'light-green': '#F0FFF4',
                 'off-white': '#FCEFF7', // O
-                'dark-green': '#006400',
+                'primary': '#006400',
                 'brown': '#8B4513',
 
                 // Modern and Clean
