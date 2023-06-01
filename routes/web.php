@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Routes\PatientRoute;
 use App\Routes\UserRoute;
 use App\Routes\VillageRoute;
 use Illuminate\Foundation\Application;
@@ -41,3 +42,4 @@ require __DIR__.'/auth.php';
 
 UserRoute::register();
 VillageRoute::register();
+PatientRoute::register();

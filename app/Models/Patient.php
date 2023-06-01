@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaravelCommon\App\Database\Eloquent\Relations\BelongsToRelation;
+use LaravelCommon\App\Models\TraitModel;
 
 class Patient extends Model
 {
     use HasFactory;
+    use TraitModel;
 
     protected BelongsToRelation $village;
 
@@ -163,6 +165,26 @@ class Patient extends Model
     public function setGender($gender)
     {
         $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of village
+     */ 
+    public function getVillage(): ?Village
+    {
+        return $this->village->get();
+    }
+
+    /**
+     * Set the value of village
+     *
+     * @return  self
+     */ 
+    public function setVillage($village)
+    {
+        $this->village->set($village);
 
         return $this;
     }

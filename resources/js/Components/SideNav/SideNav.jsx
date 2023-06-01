@@ -28,6 +28,10 @@ export const SideNav = () => {
                     <FaUser/>
                     <div className="ml-5"> Village </div>
                 </a>
+                <a href='/patients' className="flex text-gray h-8 flex-row pl-2 mb-3 items-center">
+                    <FaUser/>
+                    <div className="ml-5"> Patient </div>
+                </a>
             </div>
         </div>
     );

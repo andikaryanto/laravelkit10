@@ -1,5 +1,6 @@
 <?php
 
+use App\Routes\Api\PatientRoute;
 use App\Routes\Api\VillageRoute;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 VillageRoute::register();
+PatientRoute::register();
