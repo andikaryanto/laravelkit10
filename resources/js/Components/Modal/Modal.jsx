@@ -3,7 +3,7 @@ import { RoundedButton } from '../Button/RoundedButton';
 
 export const Modal = ({ isDialog, onOk, className, title, description, ...props }) => {
 
-    const [isClosed, setIsClosed] = useState(false);
+    const [isClosed, setIsClosed] = useState(true);
 
     const closeModal = () => {
         setIsClosed(true);
@@ -36,7 +36,7 @@ export const Modal = ({ isDialog, onOk, className, title, description, ...props 
                 isClosed ? 'invisible' : 'visible'
             }`}
             >
-                <div className="bg-white rounded-lg p-6">
+                <div className="bg-white rounded-lg p-6 max-w-xl w-full">
                     <h2 className="text-2xl font-bold mb-4">{title}</h2>
                     <p className="mb-4">{description}</p>
                     <div className='flex justify-end'>
