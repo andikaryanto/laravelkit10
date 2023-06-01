@@ -42,6 +42,7 @@ class PatientViewModel extends AbstractViewModel
     public function toArray()
     {
         return [
+            'record_medic' => $this->model->getRecordMedic(),
             'name' => $this->model->getName(),
             'address' => $this->model->getAddress(),
             'phone' => $this->model->getPhone(),

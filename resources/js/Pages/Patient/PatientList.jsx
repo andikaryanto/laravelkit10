@@ -15,10 +15,6 @@ export default function PatientList() {
 
     const [patients, setPatients] = useState([]);
 
-    const onOk = () => {
-        alert('ok clicked')
-    };
-
     const loadUser = () => {
         const accessToken = getCookie('access_token');
         get('/patients', accessToken)
@@ -37,10 +33,10 @@ export default function PatientList() {
         loadUser();
     }, [])
 
-    const headers = ['id', 'name', 'address', 'phone', 'village'];
+    const headers = ['id','no', 'name', 'address', 'phone', 'village'];
     return <AdminLayout textName={'Patients'}>
         <Column className={'justify-end'}>
-            <ButtonLink href="/village/add" className={'bg-primary text-white hover:bg-dark-primary'}>Add</ButtonLink>
+            <ButtonLink href="/patient/add" className={'bg-primary text-white hover:bg-dark-primary'}>Add</ButtonLink>
         </Column>
         <Table columns={headers}>
             {patients.map((e, i) => {
@@ -48,6 +44,7 @@ export default function PatientList() {
 
                 return <TableRow key={i}>
                     <TableDetail>{e.id}</TableDetail>
+                    <TableDetail>{e.record_medic}</TableDetail>
                     <TableDetail>{e.name}</TableDetail>
                     <TableDetail>{e.address}</TableDetail>
                     <TableDetail>{e.phone}</TableDetail>

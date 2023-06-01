@@ -188,4 +188,24 @@ class Patient extends Model
 
         return $this;
     }
+
+    /**
+     * Get the value of record_medic
+     */ 
+    public function getRecordMedic()
+    {
+        return $this->record_medic;
+    }
+
+    /**
+     * Set the value of record_medic
+     *
+     * @return  self
+     */ 
+    public function setRecordMedic($recordMedic)
+    {
+        $this->record_medic = $recordMedic;
+
+        return $this;
+    }
 }
