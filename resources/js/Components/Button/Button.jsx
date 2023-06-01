@@ -1,3 +1,3 @@
 export const Button = ({children, ...props}) => {
-    return <button>{children}</button>;
+    return <button {...props}>{children}</button>;
 }

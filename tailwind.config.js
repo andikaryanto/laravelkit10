@@ -23,6 +23,7 @@ export default {
                 'light-green': '#F0FFF4',
                 'off-white': '#FCEFF7', // O
                 'primary': '#006400',
+                'dark-primary': '#004d00',
                 'brown': '#8B4513',
 
                 // Modern and Clean

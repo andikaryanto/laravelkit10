@@ -9,18 +9,15 @@ import axios from "axios";
 import { getCookie } from "@/Common/GetCookie";
 import { get } from "@/Common/Request/Request";
 import { Modal } from "@/Components/Modal/Modal";
+import { RoundedButton } from "@/Components/Button/RoundedButton";
 
 export default function UserList() {
 
     const [users, setUsers] = useState([]);
-    const [modalOpen, setModalOpen] = useState(false);
+    // const [modalOpen, setModalOpen] = useState(false);
 
-    const openModal = () => {
-        setModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
+    const onOk = () => {
+        alert('ok clicked')
     };
 
     const loadUser = () => {
@@ -51,15 +48,12 @@ export default function UserList() {
                 </TableRow>
             })}
         </Table>
-
-        {/* <div> */}
-            <button
-                className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-2"
-                onClick={openModal}
-            >
-                Open Modal
-            </button>
-            <Modal isOpen={modalOpen} onClose={closeModal} />
-        {/* </div> */}
+        <Modal 
+            title={"This is the title"}
+            description={"This is model content."}
+            className={''} 
+            isDialog={true} 
+            onOk={onOk} 
+        />
     </AdminLayout>
 }
