@@ -8,16 +8,25 @@ import config from "@/Common/Config";
 import axios from "axios";
 import { getCookie } from "@/Common/GetCookie";
 import { get } from "@/Common/Request/Request";
+import { Modal } from "@/Components/Modal/Modal";
 
 export default function UserList() {
 
     const [users, setUsers] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
 
-    useEffect(() => {
+    const openModal = () => {
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
+    const loadUser = () => {
         const accessToken = getCookie('access_token');
         get('/users', accessToken)
         .then(result => {
-            console.log(result);
             if(result.status == 200) {
                 setUsers(result.data.data._resources);
             }
@@ -25,6 +34,10 @@ export default function UserList() {
         .catch(err => {
 
         });
+    }
+
+    useEffect(() => {
+        loadUser();
     }, [])
 
     const headers = ['id', 'username', 'email'];
@@ -38,5 +51,15 @@ export default function UserList() {
                 </TableRow>
             })}
         </Table>
+
+        {/* <div> */}
+            <button
+                className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-2"
+                onClick={openModal}
+            >
+                Open Modal
+            </button>
+            <Modal isOpen={modalOpen} onClose={closeModal} />
+        {/* </div> */}
     </AdminLayout>
 }
