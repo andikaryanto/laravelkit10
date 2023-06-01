@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { RoundedButton } from '../Button/RoundedButton';
+import { ClearButton } from '../Button/ClearButton';
 
-export const Modal = ({ isDialog, onOk, className, title, description, text, ...props }) => {
+export const ModalClean = ({ isDialog, onOk, className, title, description, text, ...props }) => {
 
     const [isClosed, setIsClosed] = useState(true);
 
@@ -15,18 +16,18 @@ export const Modal = ({ isDialog, onOk, className, title, description, text, ...
 
     let okButton = null;
     if(isDialog) {
-        okButton = <RoundedButton
+        okButton = <ClearButton
             className="bg-white hover:bg-dark-primary text-black hover:text-white outline-dark-primary border-[1px]"
             onClick={onOk}
             >
             OK
-        </RoundedButton>;
+        </ClearButton>;
     }
 
     return (
         <>
             <RoundedButton
-                className="bg-primary hover:bg-dark-primary text-white"
+                className="hover:text-dark-primary text-primary"
                 onClick={openModal}
             >
                 {text}

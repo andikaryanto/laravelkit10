@@ -21,7 +21,7 @@ export default {
                 "light-gray": '#6b7280',
                 'light-blue': '#ECF7FF', // Adjusted light-blue color
                 'light-green': '#F0FFF4',
-                'off-white': '#FCEFF7', // O
+                'off-white': '#d5d6dd', // O
                 'primary': '#006400',
                 'dark-primary': '#004d00',
                 'brown': '#8B4513',

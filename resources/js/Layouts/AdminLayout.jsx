@@ -7,8 +7,7 @@ export const AdminLayout = ({textName, ...props}) => {
         <SideNav />
         <div className="flex flex-col w-full">
             <NavBar textName={textName} />
-            <div className="px-4 py-6">
-              
+            <div className="px-4 py-6">              
               {props.children}
             </div>
         </div>

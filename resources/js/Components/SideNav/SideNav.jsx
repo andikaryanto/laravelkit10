@@ -20,9 +20,13 @@ export const SideNav = () => {
                     <FaBox/>
                     <div className="ml-5"> Dashboard </div>
                 </a>
-                <a href='#' className="flex text-gray h-8 flex-row pl-2 mb-3 items-center">
+                <a href='/users' className="flex text-gray h-8 flex-row pl-2 mb-3 items-center">
                     <FaUser/>
                     <div className="ml-5"> User </div>
+                </a>
+                <a href='/villages' className="flex text-gray h-8 flex-row pl-2 mb-3 items-center">
+                    <FaUser/>
+                    <div className="ml-5"> Village </div>
                 </a>
             </div>
         </div>
